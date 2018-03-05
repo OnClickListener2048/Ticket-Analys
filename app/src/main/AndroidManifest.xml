@@ -1,43 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.xiaolong.ticketsystem">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cn.watson.ticketsystem">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE"/>
-
+    <!-- Required -->
+    <uses-permission android:name="cn.watson.ticketsystem.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- Optional. Required for location feature -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"></uses-permission>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- Required -->
+    <permission
+        android:name="cn.watson.ticketsystem.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
     <application
-        android:name=".base.App"
+        android:name="cn.watson.ticketsystem.base.App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/CustomAppTheme">
-        <activity android:name=".ui.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name="cn.watson.ticketsystem.ui.MainActivity">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
-        <activity android:name=".ui.follow.FollowAddActivity" />
-        <activity android:name=".ui.follow.FollowSortActivity" />
-        <activity android:name=".ui.trendanalysis.AverageSimulateActivity" />
-        <activity android:name=".ui.OpenResultActivity" />
-        <activity android:name=".ui.trendanalysis.ParityTrendActivity" />
-        <activity android:name=".ui.trendanalysis.AvgAnalysisActivity" />
-        <activity android:name=".ui.trendanalysis.SumAnalysisActivity" />
-        <activity android:name=".ui.trendanalysis.CodeRateActivity" />
-        <activity android:name=".ui.trendanalysis.CodeGenerateActivity" />
-        <activity android:name=".ui.trendanalysis.CodeBaseSelectActivity" />
-        <activity android:name=".ui.trendanalysis.CodeForecastActivity" />
-        <activity android:name=".ui.web.WebActivity" />
+        <activity android:name="cn.watson.ticketsystem.ui.follow.FollowAddActivity" />
+        <activity android:name="cn.watson.ticketsystem.ui.follow.FollowSortActivity" />
+        <activity android:name="cn.watson.ticketsystem.ui.trendanalysis.AverageSimulateActivity" />
+        <activity android:name="cn.watson.ticketsystem.ui.OpenResultActivity" />
+        <activity android:name="cn.watson.ticketsystem.ui.trendanalysis.ParityTrendActivity" />
+        <activity android:name="cn.watson.ticketsystem.ui.trendanalysis.AvgAnalysisActivity" />
+        <activity android:name="cn.watson.ticketsystem.ui.trendanalysis.SumAnalysisActivity" />
+        <activity android:name="cn.watson.ticketsystem.ui.trendanalysis.CodeRateActivity" />
+        <activity android:name="cn.watson.ticketsystem.ui.trendanalysis.CodeGenerateActivity" />
+        <activity android:name="cn.watson.ticketsystem.ui.trendanalysis.CodeBaseSelectActivity" />
+        <activity android:name="cn.watson.ticketsystem.ui.trendanalysis.CodeForecastActivity" />
+        <activity android:name="cn.watson.ticketsystem.ui.web.WebActivity" />
         <activity
-            android:name=".ui.HistoryActivity"
+            android:name="cn.watson.ticketsystem.ui.HistoryActivity"
             android:launchMode="singleTask" />
 
         <meta-data
@@ -46,6 +84,30 @@
         <meta-data
             android:name="design_height"
             android:value="1920" />
+        <activity android:name="cn.watson.ticketsystem.ui.WebActivity"/>
+
+        <activity android:name="cn.watson.ticketsystem.ui.LeadActivity" android:theme="@style/lead">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="cn.watson.ticketsystem"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths_public" />
+        </provider>
+
+        <service android:name="cn.jpush.android.service.PushService"
+            android:process=":multiprocess"
+            tools:node="replace" >
+        </service>
+
     </application>
 
 
